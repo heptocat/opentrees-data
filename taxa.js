@@ -3,8 +3,9 @@ const fs = require('fs');
 const byScientific = {};
 const treeSearch = {};
 function init() {
-    // from https://biodiversity.org.au/nsl/services/export/index
-    const text = fs.readFileSync('APC-taxon-2020-02-20-5349.csv', 'utf-8');
+    // no longer works:  https://biodiversity.org.au/nsl/services/export/index
+    // use https://web.archive.org/web/20260102004909/https://biodiversity.org.au/nsl/services/export/index
+    const text = fs.readFileSync('APC-taxon-2025-08-12-4559.csv', 'utf-8');
     const rows = d3.csvParse(text);
     const includeTaxa = {
         Species: true,
@@ -23,7 +24,8 @@ function init() {
 
 function loadTreeSearch() {
     // from https://tools.bgci.org/global_tree_search.php
-    const text = fs.readFileSync('global_tree_search_trees_1_3.csv', 'utf-8');
+    // returns updated _1_9 version
+    const text = fs.readFileSync('global_tree_search_trees_1_9.csv', 'utf-8');
     const rows = d3.csvParse(text);
     for (const row of rows) {
         treeSearch[row['Taxon name']] = true;

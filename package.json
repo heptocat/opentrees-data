@@ -13,6 +13,7 @@
   "author": "Steve Bennett <me@stevebennett.me> (http://stevebennett.me)",
   "license": "CC-BY-NC-4.0",
   "dependencies": {
+    "@mapbox/mbtiles": "^0.12.1",
     "colors": "^1.1.2",
     "command-line-args": "^5.1.1",
     "command-line-usage": "^6.1.0",
@@ -27,8 +28,9 @@
     "jsonfile": "^4.0.0",
     "make-dir": "^3.0.2",
     "mapbox-upload": "^4.2.4",
-    "mbtiles": "^0.9.0",
     "ndjson": "^1.5.0",
+    "ndjson-cli": "^0.3.1",
+    "nodemon": "^3.1.14",
     "recursive-readdir": "^2.2.2",
     "tessera": "^0.14.1",
     "tippecanoe": "^0.6.0"

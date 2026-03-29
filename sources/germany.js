@@ -1,4 +1,23 @@
 module.exports = [
+   {
+        id: 'wuerzburg',
+        country: 'Germany',
+        download:
+            'https://opendata.wuerzburg.de/api/explore/v2.1/catalog/datasets/baumkataster_stadt_wuerzburg/exports/geojson?lang=en&timezone=Europe%2FBerlin',
+        info: 'https://opendata.wuerzburg.de/explore/dataset/baumkataster_stadt_wuerzburg/information/',
+        format: 'geojson',
+        crosswalk: {
+	    scientific: 'baumart_la', 
+	    common: 'baumart',   
+	    height: 'baumhoehe',    
+	    crown: 'kronenbrei',     
+	    dbh: props => props.stammumfan ? Math.round(props.stammumfan / Math.PI) : '',          // convert circum into diameter            
+	    tree_type: 'baumtyp', 
+	    ref: 'source_id',                  },
+        short: 'Wuerzburg',
+        license: 'DL-DE-BY-2.0',
+
+    },
     {
         id:'halle',
         country: 'Germany',
@@ -17,23 +36,6 @@ module.exports = [
             common: 'art_deut',
             // baumart? Laubbaum
 
-        }
-    },
-    {
-        id:'utrecht',
-        country: 'Netherlands',
-        short: 'Utrecht',
-        long: '',
-        download: 'https://ckan.dataplatform.nl/datastore/dump/2d6893b4-d56d-4865-b6cc-0bda42e547f5?bom=True',
-        info:'https://ckan.dataplatform.nl/dataset/bomenkaart/resource/2d6893b4-d56d-4865-b6cc-0bda42e547f5',
-        format: 'csv',
-        crosswalk: {
-            scientific: 'Naam_Wet',
-            common: 'Naam_NL',
-            planted: 'Plantjaar',
-            ref: 'Boomnr',
-            owner: 'Eigenaar',
-            
         }
     },
     {
